@@ -16,9 +16,9 @@ import (
 )
 
 func main() {
-	port := os.Getenv("AUTH_PORT")
+	port := os.Getenv("PORT")
 	if port == "" {
-		log.Fatal("Env variable AUTH_PORT must be defined")
+		log.Fatal("Env variable PORT must be defined")
 	}
 
 	srv := grpc.NewServer()
