@@ -39,8 +39,8 @@ build-linux bl:
 	@cd cmd/server && GOOS=linux GOARCH=amd64 $(GO) build -o $(BIN) -ldflags=$(LDFLAGS) -tags $(TAGS)
 
 build-linux-client blc:
-	@echo "[build-linux] Building service..."
-	@cd cmd/server && GOOS=linux GOARCH=amd64 $(GO) build -o $(BIN_PATH)/client -ldflags=$(LDFLAGS) -tags $(TAGS)
+	@echo "[build-linux-client] Building service..."
+	@cd cmd/client && GOOS=linux GOARCH=amd64 $(GO) build -o $(BIN_PATH)/client -ldflags=$(LDFLAGS) -tags $(TAGS)
 
 docker d: build-linux build-linux-client
 	@echo "[copy] Copy parent bin..."
