@@ -31,6 +31,16 @@ func (s *Service) Login(ctx context.Context, gr *pb.LoginRequest) (*pb.LoginResp
 
 	token, err := s.AuthSvc.Login(email, pwd)
 	if err != nil {
+		if err.Error() == "Invalid login credentials. Please try again" {
+			return &pb.LoginResponse{
+				Token: "",
+				Error: &pb.Error{
+					Code:    401,
+					Message: err.Error(),
+				},
+			}, nil
+		}
+
 		return &pb.LoginResponse{
 			Token: "",
 			Error: &pb.Error{
@@ -59,6 +69,15 @@ func (s *Service) Signup(ctx context.Context, gr *pb.SignupRequest) (*pb.SignupR
 
 	token, err := s.AuthSvc.Signup(user)
 	if err != nil {
+		if err.Error() == "user already registered" {
+			return &pb.SignupResponse{
+				Token: "",
+				Error: &pb.Error{
+					Code:    400,
+					Message: "user already registered",
+				},
+			}, nil
+		}
 		return &pb.SignupResponse{
 			Token: "",
 			Error: &pb.Error{
