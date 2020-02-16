@@ -6,9 +6,9 @@ import (
 	"net"
 	"os"
 
-	pb "github.com/frperezr/noken-test/pb"
+	pb "github.com/frperezr/microservices-demo/pb"
 
-	authSvc "github.com/frperezr/noken-test/src/auth-api/rpc/auth"
+	authSvc "github.com/frperezr/microservices-demo/src/auth-api/rpc/auth"
 
 	"google.golang.org/grpc/reflection"
 

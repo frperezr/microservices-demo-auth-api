@@ -3,11 +3,11 @@ package auth
 import (
 	"context"
 
-	"github.com/frperezr/noken-test/src/users-api"
+	"github.com/frperezr/microservices-demo/src/users-api"
 
-	pb "github.com/frperezr/noken-test/pb"
-	"github.com/frperezr/noken-test/src/auth-api"
-	"github.com/frperezr/noken-test/src/auth-api/service"
+	pb "github.com/frperezr/microservices-demo/pb"
+	"github.com/frperezr/microservices-demo/src/auth-api"
+	"github.com/frperezr/microservices-demo/src/auth-api/service"
 )
 
 var _ pb.AuthServiceServer = (*Service)(nil)

@@ -10,13 +10,13 @@ import (
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
-	"github.com/frperezr/noken-test/src/auth-api"
+	"github.com/frperezr/microservices-demo/src/auth-api"
 	"golang.org/x/crypto/bcrypt"
 	"google.golang.org/grpc"
 
-	pb "github.com/frperezr/noken-test/pb"
+	pb "github.com/frperezr/microservices-demo/pb"
 
-	user "github.com/frperezr/noken-test/src/users-api"
+	user "github.com/frperezr/microservices-demo/src/users-api"
 )
 
 // AuthSvc ...

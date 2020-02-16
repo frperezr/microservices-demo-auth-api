@@ -1,6 +1,6 @@
 VERSION=0.0.1
 USER=frperezr
-SVC=noken-auth-api
+SVC=microservices-demo-auth-api
 
 BIN=$(PWD)/bin/$(SVC)
 BIN_PATH=$(PWD)/bin
@@ -44,7 +44,7 @@ build-linux-client blc:
 
 docker d: build-linux build-linux-client
 	@echo "[build users client] Building users client..."
-	@cd $(GOPATH)/src/github.com/frperezr/noken-test/src/users-api/cmd/client && GOOS=linux GOARCH=amd64 $(GO) build -o $(BIN_PATH)/users-api -ldflags=$(LDFLAGS) -tags $(TAGS)
+	@cd $(GOPATH)/src/github.com/frperezr/microservices-demo/src/users-api/cmd/client && GOOS=linux GOARCH=amd64 $(GO) build -o $(BIN_PATH)/users-api -ldflags=$(LDFLAGS) -tags $(TAGS)
 	@echo "[docker] Building image..."
 	@docker build -t $(USER)/$(SVC):$(VERSION) .
 	@echo "[remove] Removing users client..."
